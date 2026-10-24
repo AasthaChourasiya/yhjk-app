@@ -3,6 +3,9 @@ import axios from 'axios';
 import MetricsCards from './components/MetricsCards';
 import PowerChart from './components/PowerChart';
 
+// Dynamic API Base URL (Vercel env variable prioritized, followed by Render live URL, then local fallback)
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://yhjk-app-backend.onrender.com';
+
 export default function App() {
   const [chartData, setChartData] = useState([]);
   const [metrics, setMetrics] = useState(null);
@@ -12,8 +15,8 @@ export default function App() {
     const fetchData = async () => {
       try {
         const [dataRes, metricsRes] = await Promise.all([
-          axios.get('http://127.0.0.1:8000/api/wind-data'),
-          axios.get('http://127.0.0.1:8000/api/metrics')
+          axios.get(`${API_BASE_URL}/api/wind-data`),
+          axios.get(`${API_BASE_URL}/api/metrics`)
         ]);
         setChartData(dataRes.data.data);
         setMetrics(metricsRes.data.metrics);
