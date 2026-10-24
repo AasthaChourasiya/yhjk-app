@@ -4,22 +4,22 @@ export default function MetricsCards({ metrics }) {
   if (!metrics) return null;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-      <div className="bg-white p-4 rounded-xl shadow border border-gray-100">
-        <p className="text-sm font-medium text-gray-500">Mean Absolute Error (MAE)</p>
-        <h3 className="text-2xl font-bold text-indigo-600">{metrics.mae} MW</h3>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+      <div style={{ backgroundColor: '#1e293b', padding: '1.25rem', borderRadius: '0.75rem', border: '1px solid #334155', textAlign: 'center' }}>
+        <p style={{ color: '#94a3b8', fontSize: '0.875rem', fontWeight: '500', marginBottom: '0.5rem' }}>Mean Absolute Error (MAE)</p>
+        <h3 style={{ color: '#6366f1', fontSize: '1.5rem', fontWeight: '700' }}>{metrics.mae} MW</h3>
       </div>
-      <div className="bg-white p-4 rounded-xl shadow border border-gray-100">
-        <p className="text-sm font-medium text-gray-500">RMSE (Root Mean Sq Error)</p>
-        <h3 className="text-2xl font-bold text-rose-600">{metrics.rmse} MW</h3>
+      <div style={{ backgroundColor: '#1e293b', padding: '1.25rem', borderRadius: '0.75rem', border: '1px solid #334155', textAlign: 'center' }}>
+        <p style={{ color: '#94a3b8', fontSize: '0.875rem', fontWeight: '500', marginBottom: '0.5rem' }}>RMSE (Root Mean Sq Error)</p>
+        <h3 style={{ color: '#f43f5e', fontSize: '1.5rem', fontWeight: '700' }}>{metrics.rmse} MW</h3>
       </div>
-      <div className="bg-white p-4 rounded-xl shadow border border-gray-100">
-        <p className="text-sm font-medium text-gray-500">Avg Actual Wind Power</p>
-        <h3 className="text-2xl font-bold text-emerald-600">{metrics.avg_actual} MW</h3>
+      <div style={{ backgroundColor: '#1e293b', padding: '1.25rem', borderRadius: '0.75rem', border: '1px solid #334155', textAlign: 'center' }}>
+        <p style={{ color: '#94a3b8', fontSize: '0.875rem', fontWeight: '500', marginBottom: '0.5rem' }}>Avg Actual Wind Power</p>
+        <h3 style={{ color: '#10b981', fontSize: '1.5rem', fontWeight: '700' }}>{metrics.avg_actual} MW</h3>
       </div>
-      <div className="bg-white p-4 rounded-xl shadow border border-gray-100">
-        <p className="text-sm font-medium text-gray-500">Avg Forecast Wind Power</p>
-        <h3 className="text-2xl font-bold text-blue-600">{metrics.avg_forecast} MW</h3>
+      <div style={{ backgroundColor: '#1e293b', padding: '1.25rem', borderRadius: '0.75rem', border: '1px solid #334155', textAlign: 'center' }}>
+        <p style={{ color: '#94a3b8', fontSize: '0.875rem', fontWeight: '500', marginBottom: '0.5rem' }}>Avg Forecast Wind Power</p>
+        <h3 style={{ color: '#3b82f6', fontSize: '1.5rem', fontWeight: '700' }}>{metrics.avg_forecast} MW</h3>
       </div>
     </div>
   );

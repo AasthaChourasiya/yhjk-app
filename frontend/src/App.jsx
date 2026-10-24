@@ -33,10 +33,14 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-7xl mx-auto">
-        <header className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900">UK Energy Day-Ahead Wind Forecast Dashboard</h1>
-          <p className="text-gray-600">Quantified forecast error evaluation for energy procurement decisions</p>
-        </header>
+        <header style={{ marginBottom: '2rem', textAlign: 'center' }}>
+  <h1 style={{ fontSize: '2rem', fontWeight: '800', color: '#f8fafc', lineHeight: '1.2', marginBottom: '0.5rem' }}>
+    UK Energy Day-Ahead Wind Forecast Dashboard
+  </h1>
+  <p style={{ color: '#94a3b8', fontSize: '1rem' }}>
+    Quantified forecast error evaluation for energy procurement decisions
+  </p>
+</header>
 
         {loading ? (
           <div className="text-center py-20 text-gray-500 font-medium">Loading Elexon Data...</div>
